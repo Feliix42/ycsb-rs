@@ -1,3 +1,4 @@
+use crate::ohua::Ohua;
 use crate::sqlite::SQLite;
 use anyhow::{anyhow, Result};
 use std::collections::HashMap;
@@ -12,6 +13,7 @@ pub trait DB {
 pub fn create_db(db: &str) -> Result<Rc<dyn DB>> {
     match db {
         "sqlite" => Ok(Rc::new(SQLite::new()?)),
+        "ohua" => Ok(Rc::new(Ohua::new())),
         db => Err(anyhow!("{} is an invalid database name", db)),
     }
 }

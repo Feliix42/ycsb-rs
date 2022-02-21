@@ -12,6 +12,7 @@ use workload::CoreWorkload;
 
 pub mod db;
 pub mod generator;
+pub mod ohua;
 pub mod properties;
 pub mod sqlite;
 pub mod workload;
